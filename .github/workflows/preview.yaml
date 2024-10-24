@@ -2,14 +2,13 @@
 name: Deploy PR previews
 
 on:
-  label:
-    types: [created, edited]
   pull_request:
     types:
       - opened
       - reopened
       - synchronize
       - closed
+      - labeled
 
 concurrency: preview-${{ github.ref }}
 

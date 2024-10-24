@@ -22,7 +22,7 @@ jobs:
         if: github.event.action != 'closed' # You might want to skip the build if the PR has been closed
         run: |  # modify base path for pr preview
           npm install
-          npm run build -- --base=/vite-testing/pr-preview/pr-${{ github.ref }}
+          npm run build -- --base=/vite-testing/pr-preview/pr-${{ github.event.number }}
 
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1

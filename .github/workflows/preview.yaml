@@ -13,6 +13,7 @@ concurrency: preview-${{ github.ref }}
 
 jobs:
   deploy-preview:
+    if: contains(github.event.pull_request.labels.*.name, 'preview')
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
